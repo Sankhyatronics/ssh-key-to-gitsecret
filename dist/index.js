@@ -11899,7 +11899,7 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(2186)
 const github = __nccwpck_require__(5438)
 const sodium = __nccwpck_require__(7637)
-
+const fs = __nccwpck_require__(7147);
 class GithubLocation {
   constructor(location_input) {
     this.type = "repository"
