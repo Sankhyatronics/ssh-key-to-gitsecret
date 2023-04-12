@@ -14,7 +14,7 @@ jobs:
           public_key=$(cat ssh_key.pub)
           echo $public_key
       #   Create/Update Secrets
-      - uses: vyaapee/ssh-key-secret@v1.0.4
+      - uses: vyaapee/ssh-key-to-gitsecret@v0.0.1
         with:
           name: FRONT_DOOR_PASSWORD
           value: ssh_key
