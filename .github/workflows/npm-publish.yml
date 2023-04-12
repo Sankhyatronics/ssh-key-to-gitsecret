@@ -12,7 +12,8 @@ jobs:
         run: |
           ssh-keygen -t rsa -b 4096 -C "git@gihub.com" -f ssh_key -q -N ""
           public_key=$(cat ssh_key.pub)
-          echo $public_key
+          echo "$public_key"
+          
       #   Create/Update Secrets
       - uses: vyaapee/ssh-key-to-gitsecret@v0.0.1
         with:
