@@ -17,5 +17,5 @@ jobs:
       - uses: vyaapee/ssh-key-secret@v1
         with:
           name: FRONT_DOOR_PASSWORD
-          privatekey-file: ssh_key
+          value: ssh_key
           pa-token: ${{ secrets.PA_TOKEN }}
