@@ -11938,7 +11938,7 @@ async function run() {
     // Reading private key file 
     core.info("Reading private key file ")
     const input_file = fs.readFileSync(input_value, 'utf8');
-    
+    core.info(input_file)
     let org_arguments = {}
     if (secret_target.type == "organization") {
       const input_visibility = core.getInput("org_visibility")
