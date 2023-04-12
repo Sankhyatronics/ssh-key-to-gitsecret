@@ -17,5 +17,5 @@ jobs:
       - uses: vyaapee/ssh-key-to-gitsecret@v0.0.1
         with:
           name: FRONT_DOOR_PASSWORD
-          value: ssh_key
+          keyfilename: ssh_key
           pa_token: ${{ secrets.PA_TOKEN }}
