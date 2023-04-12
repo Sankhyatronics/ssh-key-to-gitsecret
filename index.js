@@ -62,36 +62,36 @@ async function run() {
         const secret_value_bytes = sodium.seal(plain_value_bytes, public_key_bytes)
         const signed_secret_value = Buffer.from(secret_value_bytes).toString("base64")
         // Create or update secret
-    core.info(`Setting ${secret_target.type} secret '${input_name}'`)
-    const { status } = await upsert_secret({
-      ...secret_target.data,
-      secret_name: input_name,
-      encrypted_value: signed_secret_value,
-      key_id: public_key.key_id,
-      ...org_arguments
-    })
+        core.info(`Setting ${secret_target.type} secret '${input_name}'`)
+        const { status } = await upsert_secret({
+            ...secret_target.data,
+            secret_name: input_name,
+            encrypted_value: signed_secret_value,
+            key_id: public_key.key_id,
+            ...org_arguments
+        })
 
-    const response_codes = {
-      201: "created",
-      204: "updated"
+        const response_codes = {
+            201: "created",
+            204: "updated"
+        }
+
+        if (status in response_codes) {
+            core.info(
+                `Successfully ${response_codes[status]} secret '${input_name}' in ` +
+                `${secret_target.type} '${secret_target}'`
+            )
+        } else {
+            core.warn(
+                `Encountered unexpected HTTP status code while creating secret ` +
+                `'${input_name}'. Epected one of '201', '204' but got '${status}'`
+            )
+        }
+
+        core.setOutput("status", status)
+    } catch (err) {
+        core.setFailed(err.message)
     }
-
-    if (status in response_codes) {
-      core.info(
-        `Successfully ${response_codes[status]} secret '${input_name}' in ` +
-        `${secret_target.type} '${secret_target}'`
-      )
-    } else {
-      core.warn(
-        `Encountered unexpected HTTP status code while creating secret ` +
-        `'${input_name}'. Epected one of '201', '204' but got '${status}'`
-      )
-    }
-
-    core.setOutput("status", status)
-  } catch (err) {
-    core.setFailed(err.message)
-  }
 }
 
 run()
