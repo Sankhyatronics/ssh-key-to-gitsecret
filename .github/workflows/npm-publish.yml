@@ -1,0 +1,21 @@
+name: Generate and save SSH key
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate SSH Key
+        id: ssh-key-gen
+        run: |
+          ssh-keygen -t rsa -b 4096 -C "git@gihub.com" -f ssh_key -q -N ""
+          public_key=$(cat ssh_key.pub)
+
+      #   Create/Update Secrets
+      - uses: vyaapee/ssh-key-secret@v1
+        with:
+          name: FRONT_DOOR_PASSWORD
+          privatekey-file: ssh_key
+          pa-token: ${{ secrets.PA_TOKEN }}
