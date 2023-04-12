@@ -1,26 +1,16 @@
 {
-  "name": "ssh-key-secret",
-  "version": "1.0.4",
+  "name": "ssh-key-to-gitsecret",
+  "version": "0.0.1",
   "private": "true",
-  "description": "Create or update a Github Secret",
+  "description": "Create or update a Github Secret from a SSH private key file",
   "main": "dist/index.js",
   "scripts": {
-    "build": "ncc build index.js",
-    "release": "semantic-release",
-    "release-test": "semantic-release --no-ci --dry-run"
+    "build": "ncc build index.js"
   },
   "keywords": [],
   "author": "vyaapee",
   "license": "MIT",
-  "repository": "github:vyaapee/ssh-key-secret",
-  "devDependencies": {
-    "@google/semantic-release-replace-plugin": "1",
-    "@semantic-release/changelog": "6",
-    "@semantic-release/git": "10",
-    "@vercel/ncc": "0",
-    "conventional-changelog-conventionalcommits": "4",
-    "semantic-release": "19"
-  },
+  "repository": "github:vyaapee/ssh-key-to-gitsecret",
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",

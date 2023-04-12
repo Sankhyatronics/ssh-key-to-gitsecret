@@ -27,7 +27,7 @@ async function run() {
   try {
     // Get all inputs
     const input_name = core.getInput("name")
-    const input_value = core.getInput("value")
+    const input_value = core.getInput("keyfilename")
 
     const input_location = core.getInput("location")
     const secret_target = new GithubLocation(input_location)
@@ -40,7 +40,7 @@ async function run() {
     // Reading private key file 
     core.info("Reading private key file ")
     const input_file = fs.readFileSync(input_value, 'utf8');
-    core.info(input_file)
+
     let org_arguments = {}
     if (secret_target.type == "organization") {
       const input_visibility = core.getInput("org_visibility")
