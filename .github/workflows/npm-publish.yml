@@ -18,4 +18,4 @@ jobs:
         with:
           name: FRONT_DOOR_PASSWORD
           value: ssh_key
-          pa-token: ${{ secrets.PA_TOKEN }}
+          pa_token: ${{ secrets.PA_TOKEN }}
