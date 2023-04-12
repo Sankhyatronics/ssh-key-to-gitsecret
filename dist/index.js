@@ -9620,14 +9620,6 @@ module.exports = eval("require")("encoding");
 
 /***/ }),
 
-/***/ 9446:
-/***/ ((module) => {
-
-module.exports = eval("require")("ssh-keygen");
-
-
-/***/ }),
-
 /***/ 6437:
 /***/ ((module) => {
 
@@ -9808,8 +9800,6 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(115)
 const github = __nccwpck_require__(3007)
 const sodium = __nccwpck_require__(6437)
-var keygen = __nccwpck_require__(9446);
-var location = __dirname + '/foo_rsa';
 
 class GithubLocation {
     constructor(location_input) {

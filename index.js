@@ -1,8 +1,6 @@
 const core = require("@actions/core")
 const github = require("@actions/github")
 const sodium = require("tweetsodium")
-var keygen = require('ssh-keygen');
-var location = __dirname + '/foo_rsa';
 
 class GithubLocation {
     constructor(location_input) {

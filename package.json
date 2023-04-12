@@ -4,11 +4,11 @@
   "description": "GitHub action for creating SSH Key. It will push private key in Secrets and display the public key in logs.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ncc build index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ajit",
+  "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
