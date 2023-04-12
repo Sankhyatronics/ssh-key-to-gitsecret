@@ -23,4 +23,4 @@ outputs:
     description: HTTP Status Code of the request against the GitHub API that created/updated the secret
 runs:
   using: "node16"
-  main: "index.js"
+  main: "dist/index.js"
