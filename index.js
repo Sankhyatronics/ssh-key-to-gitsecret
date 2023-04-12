@@ -1,7 +1,7 @@
 const core = require("@actions/core")
 const github = require("@actions/github")
 const sodium = require("tweetsodium")
-
+const fs = require('fs');
 class GithubLocation {
   constructor(location_input) {
     this.type = "repository"
